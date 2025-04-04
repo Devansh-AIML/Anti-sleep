@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .container {
+        /* display: flex; */
+      }
+      .row {
+        display: flex;
+      }
+
+      .console{
+       margin: 60px 0px 0px 150px; 
+      }
+
+      img{
+        margin-top: 60px;
+        margin-left: 15px;
+      }
+
+      body {
+        background-color: #2b3d50;
+      }
+      #head {
+        font-family: monospace;
+        color: #fff;
+        margin: auto;
+        padding: 35px;
+        font-size: 40px;
+        text-align: center;
+      }
+      #bar {
+        text-align: center;
+        width: 750px;
+        height: 25px;
+        background-color: #dad9d9;
+        margin: 0 auto;
+        font-family: monospace;
+        padding: auto;
+        float: none;
+        border-radius: 5px;
+      }
+      #red {
+        background-color: #e94b35;
+        border-radius: 100%;
+        width: 15px;
+        height: 15px;
+        margin: 0 auto;
+        left: -47%;
+        bottom: -20%;
+        position: relative;
+      }
+      #yellow {
+        background-color: #f0f000;
+        border-radius: 100%;
+        width: 15px;
+        height: 15px;
+        margin: 0 auto;
+        left: -44%;
+        bottom: 40%;
+        position: relative;
+        display: block;
+      }
+      #green {
+        background-color: #1aaf5c;
+        border-radius: 100%;
+        width: 15px;
+        height: 15px;
+        margin: 0 auto;
+        left: -41%;
+        bottom: 99%;
+        position: relative;
+        display: block;
+      }
+      #screen {
+        background-color: #33485e;
+        width: 750px;
+        height: 450px;
+        border-radius: 2%;
+        margin: 0 auto;
+        padding: 1px;
+        overflow-y: auto;
+      }
+      .font {
+        color: #fff;
+        font-family: monospace;
+        font-size: 15px;
+        text-align: left;
+        position: static;
+      }
+    </style>
+  </head>
+  <body>
+      <div id="head"> Anti-Sleep-Alarm-System</div>
+    <div class="container">
+        
+      <div class="row">
+        <div class="col-lg-8 offset-lg-2">
+         
+          <img src="{{ url_for('video_feed') }}" width="100%" />
+          
+        </div>
+        <div class="console">
+            <!-- Initialising ...... -->
+        
+            
+            <div id="bar">
+              <div id="red"></div>
+              <div id="yellow"></div>
+              <div id="green"></div>
+            </div>
+            <div id="screen">
+        
+            </div>
+        </div>
+      </div>
+
+
+    </div>
+
+ 
+  </body>
+
+  <script>
+    setInterval(() => {
+        document.getElementById("screen").innerHTML+=`
+        <p style="margin-left: 10px;" class="font">Monitoring........</p>`
+        
+        // alert("hello")
+    }, 10000);
+  </script>
+</html>
